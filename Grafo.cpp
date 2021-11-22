@@ -13,7 +13,6 @@ Grafo::Grafo(){
     for(int i = 0; i < MAXNOS; i++)
         for(int j = 0; j < MAXNOS; j++)
             distancia[i][j] = -1;
-    
     N = 0;
 }
 
@@ -65,7 +64,6 @@ int Grafo::PegaCidade(string cidade) const{
         if(ArmazenaCidade[i] == cidade)
             cidadei = i; 
     }
-
     return cidadei;
 }
 
@@ -128,7 +126,6 @@ float Grafo::MenorCaminho(string a, string b, vector<string> &caminho){
     }
     caminho.push_back(cidadeAtual);
     return distancia[B];
-    
 }
 
 string Grafo::retornaCaminho(string a, string b, vector<string> &caminho) {
