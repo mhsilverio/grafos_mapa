@@ -96,13 +96,15 @@ float Grafo::MenorCaminho(string a, string b, vector<string> &caminho){
     int corrente = A;
 
     while(corrente != B){
-        float menordist = INFINITO;                   // é a menor distancia das novas distâncias calculadas
-        int k;                                      // próximo corrente é a que tem a menor distância
-        float dcalculada = distancia[corrente];       // distância calculada é igual a distancia de A até o nó corrente
+        float menordist = INFINITO;                 // é a menor distancia das novas distâncias calculadas
+        int k;                                      // próximo corrente é a que tem a menor distância (próximo nó que será utilizado como referência)
+        float dcalculada = distancia[corrente];     // distância calculada é igual a distancia de A até o nó corrente
 
-        for (int i=0; i<N; ++i){
+        for (int i=0; i<N; ++i){                    // visita todos os nos do grafo
             if(!calculado[i]){
+
                 float novadist = dcalculada + PegaDistancia(ArmazenaCidade[corrente], ArmazenaCidade[i]);
+
                 if(novadist < distancia[i]){
                     distancia[i] = novadist;
                     precede[i] = corrente;
@@ -116,13 +118,13 @@ float Grafo::MenorCaminho(string a, string b, vector<string> &caminho){
         corrente = k;
         calculado[corrente] = true;
     }
-
-    int iAtual = B;
-    string cidadeAtual = ArmazenaCidade[iAtual];
+    // obtenção do caminho
+    int Atual = B;
+    string cidadeAtual = ArmazenaCidade[Atual];
     while(cidadeAtual != a){
-        caminho.push_back(cidadeAtual);                     // Coloca no caminho a localização atual.
-        cidadeAtual = ArmazenaCidade[precede[iAtual]];      // Localização atual retrocederá 1 posição (para o que precede esta cidade).
-        iAtual = PegaCidade(cidadeAtual);                   // Atualiza o indice da cidade retornando em 1 o indice
+        caminho.push_back(cidadeAtual);                    // Coloca no caminho a localização atual.
+        cidadeAtual = ArmazenaCidade[precede[Atual]];      // Localização atual retrocederá 1 posição (para o que precede esta cidade).
+        Atual = PegaCidade(cidadeAtual);                   // Atualiza o indice da cidade retornando em 1 o indice
     }
     caminho.push_back(cidadeAtual);
     return distancia[B];
