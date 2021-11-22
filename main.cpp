@@ -17,20 +17,20 @@ int main(){
     cidades(M);
     UneCidades(M);
 
-    cout << "----------------" << endl; cout << "----------------" << endl;
+    cout << "----------------" << endl;
     cout << "MAPA DE CIDADES" << endl;
     cout << "  PEDA/2021.2 " << endl;
     cout << "Milena Silverio" << endl;
-    cout << "----------------" << endl; cout << "----------------" << endl;
+    cout << "----------------" << endl;
 
     cout << endl << "Digite a cidade A: ";
     getline (cin, A);
     cout << "\nDigite a cidade B: ";
     getline (cin, B);
 
-    cout << "\n--------------------------------------" << endl;
-    cout << "ENCONTRAMOS O MELHOR CAMINHO POSSIVEL!" << endl;
-    cout << "--------------------------------------" << endl;
+    cout << "\n--------------------------------------------" << endl;
+    cout << "ENCONTRAMOS A MELHOR ROTA PARA A SUA VIAGEM!" << endl;
+    cout << "--------------------------------------------" << endl;
 
     cout << "\nMenor distancia entre " << A << " e " << B << ": " << M.MenorCaminho(A, B, caminho) << " Km" << endl;
     
