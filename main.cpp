@@ -28,9 +28,9 @@ int main(){
     cout << "\nDigite a cidade B: ";
     getline (cin, B);
 
-    cout << "\n----------------------------------------" << endl;
-    cout << "ENCONTRAREMOS O MELHOR CAMINHO POSSIVEL!" << endl;
-    cout << "----------------------------------------" << endl;
+    cout << "\n--------------------------------------" << endl;
+    cout << "ENCONTRAMOS O MELHOR CAMINHO POSSIVEL!" << endl;
+    cout << "--------------------------------------" << endl;
 
     cout << "\nMenor distancia entre " << A << " e " << B << ": " << M.MenorCaminho(A, B, caminho) << " Km" << endl;
     
